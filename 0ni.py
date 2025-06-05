@@ -100,6 +100,8 @@ def menu():
     [7] Paypal     [8] Roblox
 
     [9] Steam      [10] Instagram
+
+    [11] Valorant
     """)
     inl = int(input('\n>> '))
     if inl == 1:
@@ -186,7 +188,18 @@ def menu():
         print(f'{Fore.RED}\n[!] Error opcion invalida!')
         time.sleep(2)
         menu()
-
+    else: inl == 11:   
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "Steam"
+          setup(site)
+        elif a == 2:
+            site = "Riot"
+            setup(site)
+        
 
 def config():
     home = os.getenv("HOME")
@@ -195,7 +208,7 @@ def config():
     else:
         print('\033[31m\n[!] Key de localhost.run no encontrada.')
         print('\033[32m\n[~] Generando key...')
-        time.sleep(2)
+        time.sleep(5)
         os.system(f"ssh-keygen -N '' -t rsa -f {home}/.ssh/id_rsa")
         time.sleep(2)
         menu()
