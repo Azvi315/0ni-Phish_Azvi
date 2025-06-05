@@ -186,7 +186,7 @@ def menu():
         print(f'{Fore.RED}\n[!] Error  Option Invalid!')
         time.sleep(2)
         menu()
-   else: inl == 11:
+    else: inl == 11:
         print('\n[~] Select user language:')
         print('\n[1] Español')
         print('\n[2] Ingles')
@@ -197,7 +197,7 @@ def menu():
         elif a == 2:
             site = "Riot_en"
             setup(site)     
-   else:
+     else:
         print(f'{Fore.RED}\n[!] Error  Option Invalid!')
         time.sleep(2)
         menu()
